@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+file =open('Galaxy1 (4).txt','r')
+file.readline()
+X=[]
+Y=[]
+
+for line in file:
+  X.append(float(line.split("\t")[0]))
+
+  Y.append(float(line.split("\t")[1]))
+
+x=np.array(X)
+y=np.array(Y)
+
+plt.plot(x, y)
+plt.xlabel("Radius")
+plt.ylabel("Velocity (")
+plt.title("A graph to show velocity over radius")
+plt.show()
+

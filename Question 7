@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+file =open('Galaxy1 (4).txt','r')
+file.readline()
+G= 4.3 * (10**-6)
+
+radius=[]
+velocity=[]
+change_in_radius=[]
+change_in_velocity=[]
+mass=[]
+predicted_velocity=[]
+
+
+for line in file:
+  radius.append(float(line.split("\t")[0]))
+
+  velocity.append(float(line.split("\t")[1]))
+
+  change_in_radius.append(float(line.split("\t")[2]))
+
+  change_in_velocity.append(float(line.split("\t")[3]))
+
+  mass.append(float(line.split("\t")[4]))
+
+  predicted_velocity.append((float(G)) * (float(line.split("\t")[4])) / (float(line.split("\t")[0])) ** (1/2))
+
+print("The predicted velocities for each radius are:",predicted_velocity)
+  
